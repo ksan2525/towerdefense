@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "enemy")
+        if (collision.gameObject.tag == "enemy" || collision.gameObject.tag == "EnemyFort")
         {
             Enemy_spriteRenderer = collision.gameObject.GetComponent<SpriteRenderer>();
             if (Enemy_spriteRenderer.sprite.name == "Enemy_3")

@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     private bool move;
 
     [SerializeField]
-    private int EnemyHP = 10;
+    private float EnemyHP = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +50,18 @@ public class Enemy : MonoBehaviour
                 EnemyHP -= 1;
             }
             
+            anim.SetBool("Attack", true);
+            move = false;
+        }
+
+        if (collision.gameObject.tag == "Player2")
+        {
+            Player_spriteRenderer = collision.gameObject.GetComponent<SpriteRenderer>();
+            if (Player_spriteRenderer.sprite.name == "Player_3")
+            {
+                EnemyHP -= 0.5f;
+            }
+
             anim.SetBool("Attack", true);
             move = false;
         }

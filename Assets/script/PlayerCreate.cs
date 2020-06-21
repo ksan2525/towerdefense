@@ -31,7 +31,7 @@ public class PlayerCreate : MonoBehaviour
     {
         if (Money >= Price)
         {
-            Instantiate(Player.gameObject, new Vector3(10.0f, -2.6f, 0), Quaternion.identity);
+            Instantiate(Player.gameObject, new Vector3(9.13f, -2.6f, 0), Quaternion.identity);
             Money -= Price;
         }
     }
