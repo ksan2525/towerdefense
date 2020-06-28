@@ -167,4 +167,4 @@ MonoBehaviour:
     type: 3}
   MoveSpeed: 1
   Direction: 180
-  EnemyHP: 20
+  EnemyHP: 40

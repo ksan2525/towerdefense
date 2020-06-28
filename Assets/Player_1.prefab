@@ -165,5 +165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy_spriteRenderer: {fileID: 0}
   MoveSpeed: -1
+  Price: 100
   Direction: 0
-  PlayerHP: 30
+  PlayerHP: 40

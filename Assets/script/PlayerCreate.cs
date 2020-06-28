@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class PlayerCreate : MonoBehaviour
 {
     public GameObject Player;
+
+    public GameObject Player2;
+
     private int Money = 0;
     public Text MoneyText;
 
-    [SerializeField]
-    private int Price = 100;
+    
 
     private float time = 0;
 
@@ -29,10 +31,19 @@ public class PlayerCreate : MonoBehaviour
 
     public void OnClick()
     {
-        if (Money >= Price)
+        if (Money >= Player.GetComponent<Player>().Price)
         {
             Instantiate(Player.gameObject, new Vector3(9.13f, -2.6f, 0), Quaternion.identity);
-            Money -= Price;
+            Money -= Player.GetComponent<Player>().Price;
+        }
+    }
+
+    public void OnClick2()
+    {
+        if (Money >= Player2.GetComponent<Player>().Price)
+        {
+            Instantiate(Player2.gameObject, new Vector3(9.13f, -2.6f, 0), Quaternion.identity);
+            Money -= Player2.GetComponent<Player>().Price;
         }
     }
 }

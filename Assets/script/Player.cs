@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float MoveSpeed = -1;
 
+    public int Price;
 
     [SerializeField]
     private float Direction = 0;

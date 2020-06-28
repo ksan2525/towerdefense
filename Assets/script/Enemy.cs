@@ -57,9 +57,9 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Player2")
         {
             Player_spriteRenderer = collision.gameObject.GetComponent<SpriteRenderer>();
-            if (Player_spriteRenderer.sprite.name == "Player_3")
+            if (Player_spriteRenderer.sprite.name == "sprite_1")
             {
-                EnemyHP -= 0.5f;
+                EnemyHP -= 2f;
             }
 
             anim.SetBool("Attack", true);
@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Player2")
         {
             anim.SetBool("Attack", false);
             move = true;
