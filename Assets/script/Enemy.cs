@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Fort")
         {
             Player_spriteRenderer = collision.gameObject.GetComponent<SpriteRenderer>();
             if (Player_spriteRenderer.sprite.name == "Player_3")

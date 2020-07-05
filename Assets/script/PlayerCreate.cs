@@ -20,7 +20,7 @@ public class PlayerCreate : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time >= 0.01f)
+        if (time >= 0.05f)
         {
             Money += 1;
             time = 0f;
@@ -33,7 +33,7 @@ public class PlayerCreate : MonoBehaviour
     {
         if (Money >= Player.GetComponent<Player>().Price)
         {
-            Instantiate(Player.gameObject, new Vector3(9.13f, -2.6f, 0), Quaternion.identity);
+            Instantiate(Player.gameObject, new Vector3(-62.5f, -2.68f, 0), Quaternion.identity);
             Money -= Player.GetComponent<Player>().Price;
         }
     }
@@ -42,7 +42,7 @@ public class PlayerCreate : MonoBehaviour
     {
         if (Money >= Player2.GetComponent<Player>().Price)
         {
-            Instantiate(Player2.gameObject, new Vector3(9.13f, -2.6f, 0), Quaternion.identity);
+            Instantiate(Player2.gameObject, new Vector3(-62.5f, -2.6f, 0), Quaternion.identity);
             Money -= Player2.GetComponent<Player>().Price;
         }
     }
