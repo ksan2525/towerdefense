@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
     private float EnemyHP = 10;
 
     public int FortHP;
+
+    private bool stay;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,8 @@ public class Enemy : MonoBehaviour
 
         anim = GetComponent<Animator>();
         move = true;
-        GameObject.Find("Fort").GetComponent<GameOver>().FortHP = FortHP;
+        stay = true;
+        //GameObject.Find("Fort").GetComponent<GameOver>().FortHP = FortHP;
     }
 
     // Update is called once per frame
@@ -52,13 +55,18 @@ public class Enemy : MonoBehaviour
                 EnemyHP -= 1;
             }
             
-        if (collision.gameObject.tag == "Fort")
-            {
-                FortHP -= 1;
-            }
-            anim.SetBool("Attack", true);
-            
+        
+            anim.SetBool("Attack", true);           
             move = false;
+            if (stay == true)
+            {
+                transform.position += new Vector3(MoveSpeed / 1000f * Time.deltaTime, 0, 0);
+            }
+            else
+            {
+                transform.position -= new Vector3(MoveSpeed / 1000f * Time.deltaTime, 0, 0);
+            }
+            stay = !stay;
 
         }
 
