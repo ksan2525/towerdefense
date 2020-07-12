@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
                 transform.position -= new Vector3(MoveSpeed / 1000f * Time.deltaTime, 0, 0);
             }
             stay = !stay;
-            Debug.Log("stay");
+            
             
         }
 
@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("Attack",false);
             move = true;
-            Debug.Log("exit");
+            
         }
     }
 }

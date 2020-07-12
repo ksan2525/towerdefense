@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float EnemyHP = 10;
 
+    public int FortHP;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour
 
         anim = GetComponent<Animator>();
         move = true;
+        GameObject.Find("Fort").GetComponent<GameOver>().FortHP = FortHP;
     }
 
     // Update is called once per frame
@@ -50,8 +52,14 @@ public class Enemy : MonoBehaviour
                 EnemyHP -= 1;
             }
             
+        if (collision.gameObject.tag == "Fort")
+            {
+                FortHP -= 1;
+            }
             anim.SetBool("Attack", true);
+            
             move = false;
+
         }
 
         if (collision.gameObject.tag == "Player2")
